@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hollow Cinema - About Us</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary-purple: #8A2BE2;
+        --primary-purple-glow: rgba(138, 43, 226, 0.6);
+        --dark-blue: #1a1a2e;
+        --deep-indigo: #0c0a1d;
+        --light-text: #e0e0e0;
+        --highlight-blue: #483D8B;
+        --card-bg: #1e1e3f;
+        --border-color: #4a4a6a;
+    }
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--deep-indigo);
+        color: var(--light-text);
+        padding-top: 80px;
+    }
+    header.navbar {
+        background: var(--dark-blue);
+        padding: 15px 40px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s;
+    }
+    header.navbar.scrolled { background-color: rgba(26,26,46,0.9); backdrop-filter: blur(10px); }
+    .navbar .logo { font-weight: 700; font-size: 1.6em; color: #fff; display: flex; align-items: center; gap: 10px; }
+    .nav-links a { color: var(--light-text); margin: 0 15px; text-decoration: none; font-weight: 600; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--primary-purple); }
+    main { max-width: 1000px; margin: 60px auto; padding: 20px; }
+    h1 { text-align: center; margin-bottom: 30px; font-size: 2.5em; }
+    .about-content { background: var(--card-bg); padding: 30px; border-radius: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.4); line-height: 1.8; }
+    h2 { color: var(--primary-purple); margin-bottom: 15px; }
+    p { margin-bottom: 15px; }
+    footer { text-align: center; color: #aaa; margin-top: 60px; padding: 20px 0; background: var(--dark-blue); }
+</style>
+</head>
+<body>
+<header class="navbar">
+    <div class="logo">Hollow Cinema</div>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    </nav>
+</header>
+
+<main>
+    <h1>About Us</h1>
+    <div class="about-content">
+        <h2>Our Mission</h2>
+        <p>Hollow Cinema is dedicated to bringing the latest blockbuster movies and unforgettable cinematic experiences to our audience. We provide comfortable seating, cutting-edge technology, and a welcoming environment for movie lovers of all ages.</p>
+        
+        <h2>Our Vision</h2>
+        <p>We aim to be the leading cinema in providing a premium and immersive movie experience, blending technology and entertainment seamlessly. Our goal is to be a cultural hub for film enthusiasts.</p>
+        
+        <h2>Our Team</h2>
+        <p>Our team consists of passionate movie enthusiasts and professionals in the entertainment industry. We carefully curate movie selections, maintain high-quality service, and ensure a safe and enjoyable environment for all visitors.</p>
+    </div>
+</main>
+
+<footer>© 2025 Hollow Cinema</footer>
+
+<script>
+    const navbar = document.querySelector('.navbar');
+    window.onscroll = () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    };
+</script>
+</body>
+</html>

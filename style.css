@@ -1,0 +1,197 @@
+/* === GOJO SATORU BLACK–BLUE–PURPLE THEME === */
+
+/* Base */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #0b0b13;               /* near-black midnight */
+    color: #e0e0f0;                          /* soft white-lavender text */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 15px 40px;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color .4s ease, box-shadow .4s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(35, 40, 70, 0.9);  /* deep indigo glass */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+}
+
+.navbar .logo img {
+    height: 45px;
+    filter: drop-shadow(0 0 6px rgba(120, 160, 255, 0.6));
+}
+
+.navbar .nav-links a,
+.navbar .btn-group a {
+    color: #d8d8ff;
+    text-decoration: none;
+    margin: 0 18px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background .3s ease, color .3s ease, transform .2s ease, box-shadow .3s ease;
+}
+
+.navbar .nav-links a:hover,
+.navbar .btn-group a:hover {
+    background: linear-gradient(135deg,#5a60ff,#9b4dff);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(155, 77, 255, 0.6);
+}
+
+/* --- SHOWCASE / CAROUSEL --- */
+.movie-showcase {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    color: #fff;
+}
+
+.carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(ellipse at center,
+        rgba(0,0,0,0) 20%,
+        rgba(15,15,30,0.3) 60%,
+        rgba(15,15,30,0.8) 90%);
+    z-index: 1;
+}
+
+/* Title & buttons inside carousel */
+.carousel-item .content h1 {
+    text-shadow: 0 0 20px rgba(130,160,255,0.8);
+}
+.carousel-item .content button {
+    padding: 15px 35px;
+    background: linear-gradient(135deg,#5a60ff,#9b4dff);
+    border: none;
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: transform .2s ease, box-shadow .3s ease;
+    box-shadow: 0 0 15px rgba(155,77,255,0.4);
+}
+.carousel-item .content button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 25px rgba(155,77,255,0.7);
+}
+
+/* Carousel arrows */
+.carousel-nav {
+    background: rgba(30,30,50,0.6);
+    color: #cfcfff;
+    border-radius: 50%;
+    font-size: 2.5em;
+    padding: 18px 12px;
+    transition: background .3s ease, transform .2s ease;
+}
+.carousel-nav:hover {
+    background: rgba(90,96,255,0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* --- TABS --- */
+.tab {
+    background-color: #1a1a2a;
+    color: #d0d0ff;
+    border: none;
+    padding: 14px 30px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background .3s ease, transform .2s ease, box-shadow .3s ease;
+}
+.tab:hover {
+    background-color: #2a2a4a;
+    transform: translateY(-3px);
+    box-shadow: 0 0 12px rgba(120,160,255,0.4);
+}
+.tab.active {
+    background: linear-gradient(135deg,#5a60ff,#9b4dff);
+    color: #fff;
+    box-shadow: 0 0 18px rgba(155,77,255,0.6);
+}
+
+/* --- MOVIE CARDS --- */
+.movie-card {
+    background: #161628;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+.movie-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(90,96,255,0.4);
+}
+.movie-card h3 { color:#e0e0ff; }
+.movie-card button {
+    background: linear-gradient(135deg,#5a60ff,#9b4dff);
+    color:#fff;
+    border:none;
+    padding:10px 18px;
+    border-radius:6px;
+    font-weight:bold;
+    transition:transform .2s ease, box-shadow .3s ease;
+    box-shadow:0 0 12px rgba(120,160,255,0.3);
+}
+.movie-card button:hover {
+    transform: translateY(-2px);
+    box-shadow:0 0 18px rgba(155,77,255,0.6);
+}
+
+/* --- MODAL & BUTTONS --- */
+.modal-content {
+    background:#1a1a2a;
+    color:#e0e0ff;
+    box-shadow:0 0 25px rgba(120,160,255,0.4);
+}
+.modal-action-button,
+.modal-buttons-group button {
+    background: linear-gradient(135deg,#5a60ff,#9b4dff);
+    color:#fff;
+    border:none;
+    border-radius:30px;
+    padding:12px 30px;
+    font-weight:bold;
+    transition:transform .2s ease, box-shadow .3s ease;
+}
+.modal-action-button:hover,
+.modal-buttons-group button:hover {
+    transform: translateY(-3px);
+    box-shadow:0 0 20px rgba(155,77,255,0.7);
+}
+
+/* Inputs / Seats / Payment use matching accents */
+#bookingModal input,
+#bookingModal select,
+.time-slot-btn,
+.seat,
+.payment-option {
+    background:#232343;
+    border:1px solid #444;
+    color:#e0e0ff;
+}
+.time-slot-btn.selected,
+.seat.selected,
+.payment-btn.selected {
+    background: linear-gradient(135deg,#5a60ff,#9b4dff);
+    border-color:#7a7aff;
+    box-shadow:0 0 12px rgba(155,77,255,0.6);
+}

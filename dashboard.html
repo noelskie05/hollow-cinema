@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>HollowCine | Dashboard</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #e0e0f0;
+        display: flex;
+        min-height: 100vh;
+        background: url('images/login-bg.jpg') center/cover no-repeat;
+        position: relative;
+    }
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(11,11,19,0.85);
+        z-index: -1;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 240px;
+        background: #161628;
+        box-shadow: 4px 0 12px rgba(0,0,0,0.5);
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebar-logo {
+        text-align: center;
+        margin-bottom: 40px;
+        animation: pulse 2s infinite ease-in-out;
+        cursor: pointer;
+    }
+    .sidebar-logo img {
+        height: 60px;
+        filter: drop-shadow(0 0 10px rgba(120,160,255,0.7));
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .sidebar-logo:hover img {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 15px rgba(155,77,255,1));
+    }
+    @keyframes pulse {
+        0%   { transform: scale(1);   filter: drop-shadow(0 0 8px rgba(120,160,255,0.5)); }
+        50%  { transform: scale(1.02); filter: drop-shadow(0 0 12px rgba(155,77,255,0.8)); }
+        100% { transform: scale(1);   filter: drop-shadow(0 0 8px rgba(120,160,255,0.5)); }
+    }
+    .nav-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex: 1;
+    }
+    .nav-links li {
+        margin: 10px 0;
+    }
+    .nav-links a {
+        display: block;
+        color: #cfcfff;
+        text-decoration: none;
+        padding: 12px 20px;
+        transition: background 0.3s ease, color 0.3s ease;
+        border-left: 4px solid transparent;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+        background: #232343;
+        color: #9b4dff;
+        border-left: 4px solid #9b4dff;
+    }
+    .sidebar-footer {
+        padding: 20px;
+        font-size: 0.9em;
+        color: #aaa;
+        text-align: center;
+    }
+
+    /* Main Content */
+    .main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        overflow-y: auto;
+    }
+    .topbar {
+        background: #161628;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    .topbar h1 {
+        margin: 0;
+        font-size: 1.6em;
+        color: #e0e0ff;
+        text-shadow: 0 0 10px rgba(130,160,255,0.6);
+    }
+    .topbar .user-info {
+        font-weight: bold;
+        color: #cfcfff;
+    }
+
+    /* Example dashboard widgets */
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+    }
+    .card {
+        background: #232343;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 0 25px rgba(155,77,255,0.6);
+    }
+    .card h3 {
+        margin-top: 0;
+        color: #9b4dff;
+        font-size: 1.3em;
+    }
+    .card p {
+        color: #ddd;
+        font-size: 1em;
+    }
+
+    @media (max-width: 768px) {
+        .sidebar { width: 200px; }
+    }
+</style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo" onclick="window.location.href='index.html'">
+            <img src="images/logo.png" alt="HollowCine Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Dashboard</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Bookings</a></li>
+            <li><a href="#">Users</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+        <div class="sidebar-footer">© 2025 HollowCine</div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="topbar">
+            <h1>Dashboard</h1>
+            <div class="user-info">Welcome, Admin</div>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Total Movies</h3>
+                <p>128</p>
+            </div>
+            <div class="card">
+                <h3>Total Bookings</h3>
+                <p>2,345</p>
+            </div>
+            <div class="card">
+                <h3>Active Users</h3>
+                <p>812</p>
+            </div>
+            <div class="card">
+                <h3>Revenue</h3>
+                <p>$12,430</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

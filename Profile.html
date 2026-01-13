@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>321MOVIES - User Profile</title>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/?size=100&id=oF7KjqvHPzn6&format=png&color=000000" />
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .profile-container {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            margin: 10px 0;
+        }
+
+        .card p {
+            margin: 5px 0;
+            color: #ccc;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 30px 0 10px;
+        }
+
+        .movie-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .movie-item {
+            background-color: #2a2a2a;
+            padding: 10px;
+            border-radius: 8px;
+            width: 120px;
+            text-align: center;
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎬 321MOVIES</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Movies</a>
+            <a href="#">Logout</a>
+        </nav>
+    </header>
+
+    <div class="profile-container">
+        <div class="card">
+            <img src="profile-pic.jpg" alt="User Photo">
+            <h2>Jane Doe</h2>
+            <p>Movie Lover | Reviewer</p>
+            <p>Favorite Genres: Sci-Fi, Thriller, Drama</p>
+            <p>"Movies let us live a thousand lives."</p>
+
+            <div class="section-title">Saved Movies</div>
+            <div class="movie-list">
+                <div class="movie-item">Inception</div>
+                <div class="movie-item">Interstellar</div>
+                <div class="movie-item">Tenet</div>
+            </div>
+
+            <div class="section-title">Watchlist</div>
+            <div class="movie-list">
+                <div class="movie-item">Dune</div>
+                <div class="movie-item">Blade Runner 2049</div>
+                <div class="movie-item">Oppenheimer</div>
+            </div>
+
+            <div class="section-title">Favorites</div>
+            <div class="movie-list">
+                <div class="movie-item">The Dark Knight</div>
+                <div class="movie-item">Arrival</div>
+                <div class="movie-item">The Prestige</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 321MOVIES. All rights reserved.
+    </footer>
+</body>
+</html>

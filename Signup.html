@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>HollowCine | Sign Up</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #e0e0f0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box;
+        background: url('images/login-bg.jpg') center/cover no-repeat; /* same bg as login */
+        position: relative;
+    }
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(11,11,19,0.85); /* deep midnight overlay */
+        z-index: -1;
+    }
+
+    /* Logo */
+    .signup-logo {
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 250px;
+        animation: pulse 2s infinite ease-in-out;
+        cursor: pointer;
+        z-index: 1;
+    }
+    .signup-logo img {
+        height: 80px;
+        width: auto;
+        display: block;
+        filter: drop-shadow(0 0 10px rgba(120,160,255,0.7));
+        transition: filter 0.3s ease, transform 0.3s ease;
+    }
+    .signup-logo:hover img {
+        filter: drop-shadow(0 0 15px rgba(155,77,255,1));
+        transform: scale(1.05);
+    }
+    @keyframes pulse {
+        0%   { transform: scale(1);   filter: drop-shadow(0 0 8px rgba(120,160,255,0.5)); }
+        50%  { transform: scale(1.02); filter: drop-shadow(0 0 12px rgba(155,77,255,0.8)); }
+        100% { transform: scale(1);   filter: drop-shadow(0 0 8px rgba(120,160,255,0.5)); }
+    }
+
+    /* Sign-Up Box */
+    .signup-box {
+        background: #161628;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.6);
+        width: 100%;
+        max-width: 450px;
+        text-align: center;
+        z-index: 1;
+    }
+    .signup-box h2 {
+        color: #e0e0ff;
+        margin-bottom: 25px;
+        font-size: 2em;
+        text-shadow: 0 0 12px rgba(130,160,255,0.7);
+    }
+    .input-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    .signup-box label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #cfcfff;
+    }
+    .signup-box input[type="text"],
+    .signup-box input[type="email"],
+    .signup-box input[type="password"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #444;
+        border-radius: 6px;
+        background-color: #232343;
+        color: #e0e0ff;
+        font-size: 1em;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .signup-box input:focus {
+        border-color: #7a7aff;
+        box-shadow: 0 0 10px rgba(155,77,255,0.6);
+        outline: none;
+    }
+    .signup-box button {
+        background: linear-gradient(135deg,#5a60ff,#9b4dff);
+        color: #fff;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1.1em;
+        font-weight: bold;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+        width: 100%;
+        margin-top: 20px;
+        box-shadow: 0 0 15px rgba(155,77,255,0.4);
+    }
+    .signup-box button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 25px rgba(155,77,255,0.7);
+    }
+    .login-link {
+        margin-top: 20px;
+        font-size: 0.95em;
+        color: #aaa;
+    }
+    .login-link a {
+        color: #9b4dff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
+    .login-link a:hover {
+        color: #5a60ff;
+        text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+        background-color: #161628;
+        text-align: center;
+        padding: 20px;
+        color: #aaa;
+        width: 100%;
+        margin-top: auto;
+        z-index: 1;
+        box-shadow: 0 -4px 12px rgba(0,0,0,0.5);
+    }
+</style>
+</head>
+<body>
+
+    <!-- Clickable Logo -->
+    <div class="signup-logo" onclick="window.location.href='index.html'">
+        <img src="images/logo.png" alt="HollowCine Logo">
+    </div>
+
+    <!-- Sign Up Box -->
+    <div class="signup-box">
+        <h2>Create Your HollowCine Account</h2>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Choose a username" required />
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required />
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter your password" required />
+            </div>
+            <button type="submit">Create Account</button>
+        </form>
+        <p class="login-link">Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+
+    <footer>© 2025 HollowCine. All rights reserved.</footer>
+
+</body>
+</html>
